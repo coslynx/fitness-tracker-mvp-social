@@ -1,0 +1,48 @@
+{
+  "name": "fitness-tracker-mvp-social",
+  "version": "1.0.0",
+  "description": "Fitness tracker MVP with social features",
+  "main": "server.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,md}\"",
+    "prisma:generate": "prisma generate",
+    "prisma:studio": "npx prisma studio",
+    "prisma:push": "npx prisma push",
+    "prisma:db-push": "npx prisma db push",
+    "prisma:seed": "npx prisma db seed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spectra-ai-codegen/fitness-tracker-mvp-social.git"
+  },
+  "author": "Spectra.codes",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "@next-auth/providers/google": "^4.12.6",
+    "@prisma/client": "^4.7.1",
+    "@types/node": "^18.11.10",
+    "@types/react": "^18.0.15",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.33.0",
+    "eslint-config-next": "^13.3.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "next": "^14.0.3",
+    "next-auth": "^4.19.2",
+    "postcss": "^8.4.18",
+    "prettier": "^2.8.4",
+    "prisma": "^4.7.1",
+    "tailwindcss": "^3.3.1",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "zustand": "^4.1.6"
+  }
+}
