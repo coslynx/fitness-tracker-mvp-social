@@ -1,0 +1,19 @@
+{
+  "name": "20240129194903_init",
+  "migrations": [
+    {
+      "migration": "20240129194903_init",
+      "hash": "5c510a5091ea6439e2d9a08165a6d7776249d618",
+      "source": "prisma/migrations/20240129194903_init/migration.sql",
+      "datamodel": "prisma/migrations/20240129194903_init/migration.datamodel",
+      "steps": [
+        {
+          "raw": "CREATE TABLE \"User\" (\n    \"user_id\" SERIAL PRIMARY KEY,\n    \"email\" TEXT NOT NULL UNIQUE,\n    \"name\" TEXT,\n    \"createdAt\" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,\n    \"updatedAt\" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP\n);\nCREATE TABLE \"Goal\" (\n    \"goal_id\" SERIAL PRIMARY KEY,\n    \"name\" TEXT NOT NULL,\n    \"target\" REAL NOT NULL,\n    \"progress\" REAL,\n    \"user_id\" INTEGER NOT NULL,\n    \"createdAt\" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,\n    \"updatedAt\" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP\n);\nCREATE TABLE \"Activity\" (\n    \"activity_id\" SERIAL PRIMARY KEY,\n    \"user_id\" INTEGER NOT NULL,\n    \"type\" TEXT NOT NULL,\n    \"date\" TIMESTAMP WITH TIME ZONE NOT NULL,\n    \"duration\" INTEGER,\n    \"caloriesBurned\" INTEGER,\n    \"createdAt\" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,\n    \"updatedAt\" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP\n);\nALTER TABLE \"Goal\" ADD CONSTRAINT \"Goal_user_id_fkey\" FOREIGN KEY (\"user_id\") REFERENCES \"User\"(\"user_id\") ON DELETE RESTRICT ON UPDATE CASCADE;\nALTER TABLE \"Activity\" ADD CONSTRAINT \"Activity_user_id_fkey\" FOREIGN KEY (\"user_id\") REFERENCES \"User\"(\"user_id\") ON DELETE RESTRICT ON UPDATE CASCADE;",
+          "resource": "schema",
+          "action": "create"
+        }
+      ]
+    }
+  ],
+  "dml": []
+}
